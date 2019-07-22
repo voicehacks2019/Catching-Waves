@@ -183,35 +183,13 @@ const CreateEventIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'CreateEventIntent';
   },  
   handle(handlerInput){
-      const group = handlerInput.requestEnvelope.request.intent.slots.group.value;
-      const activity = handlerInput.requestEnvelope.request.intent.slots.activity.value;
-      const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
-      
-      if(group === null){
-          const speechText = 'What group are you going with?';
           
           return handlerInput.responseBuilder
-            .speak(speechText)
-            .reprompt(speechText)
+            .speak('Ok I\'ll let you know if others join the group')
+            .reprompt('speechText')
             .getResponse();
-      }
-      if(activity === null){
-          const speechText = 'What activity are you going to do?';
-          
-          return handlerInput.responseBuilder
-            .speak(speechText)
-            .reprompt(speechText)
-            .getResponse();
-      }
-      if(day === null){
-          const speechText = 'What date are you going?';
-          
-          return handlerInput.responseBuilder
-            .speak(speechText)
-            .reprompt(speechText)
-            .getResponse();
-      }
   }
+      
 };
 
 const GetNotifIntentHandler = {
