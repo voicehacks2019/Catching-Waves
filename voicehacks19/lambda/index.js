@@ -232,7 +232,7 @@ const GetNotifIntentHandler = {
 const FriendPlansIntentHandler= {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'GetNotifIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'FriendPlansIntent';
     },
     handle(handlerInput) {
         const speechText = 'Sure - Looks like Brianna is going kayaking at Bantam Lake on Sunday. Do you want to join?';
