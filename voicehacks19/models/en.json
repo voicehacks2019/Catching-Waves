@@ -49,9 +49,7 @@
                         }
                     ],
                     "samples": [
-                        "I'm going {activity} on {day}",
-                        "Let {group} know I'm going {activity}",
-                        "Let {group} know that I'm {activity} on {day}"
+                        "I'm going kayaking sunday"
                     ]
                 },
                 {
