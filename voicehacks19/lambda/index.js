@@ -206,8 +206,25 @@ const GetNotifIntentHandler = {
     },
     handle(handlerInput) {
         const speechText = 'Your upcoming events are: Meeting Katie at Synch Park at 3, Play basketball with the boys at  7pm, Helping Margaret with baking at 10 pm';
+        const repromptText = "Would you like to hear it again?";
         return handlerInput.responseBuilder
             .speak(speechText)
+            .reprompt(repromptText)
+            .getResponse();
+    }
+};
+
+const FriendPlansIntentHandler= {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'GetNotifIntent';
+    },
+    handle(handlerInput) {
+        const speechText = 'Sure - Looks like Brianna is going kayaking at Bantam Lake on Sunday. Do you want to join?';
+        const repromptText = "Do you want to join?";
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            .reprompt(repromptText)
             .getResponse();
     }
 };
@@ -219,6 +236,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         HelloWorldIntentHandler,
+        FriendPlansIntentHandler,
         GetNotifIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
