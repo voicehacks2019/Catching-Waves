@@ -55,30 +55,15 @@
                     ]
                 },
                 {
-                    "name": "GetNotifIntent",
-                    "slots": [
-                        {
-                            "name": "day",
-                            "type": "AMAZON.DayOfWeek"
-                        }
-                    ],
+                    "name": "FriendPlansIntent",
+                    "slots": [],
                     "samples": [
-                        "{day}",
-                        "do I have notifications",
-                        "what are my plans",
-                        "What does my {day} look like",
-                        "what are my plans for {day}",
-                        "What are my notifications for {day}",
-                        "Do I have any notifications for {day}"
+                        "What's going on this weekend"
                     ]
                 },
                 {
-                    "name": "setEvent",
-                    "slots": [],
-                    "samples": [
-                        "kayak today",
-                        "let Paddle Group know that I'm going kayaking on the deleware river today"
-                    ]
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
                 }
             ],
             "types": []
