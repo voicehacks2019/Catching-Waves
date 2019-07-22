@@ -44,6 +44,21 @@ const HelpIntentHandler = {
     }
 };
 
+const YesIntentHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.YesIntent';
+    },
+    handle(handlerInput) {
+        const speechText = 'Ok, I\'ll add you to the activity';
+
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            .reprompt(speechText)
+            .getResponse();
+    }
+};
+
 const setEventHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -243,6 +258,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         SessionEndedRequestHandler,
         CreateEventIntentHandler,
         setEventHandler,
+        YesIntentHandler,
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
